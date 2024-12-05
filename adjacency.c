@@ -2,6 +2,8 @@
 #include <stdio.h>
 
 int main(){
+	int u,v;
+
 	size_t i,j;
 	adjmat tree;
 
@@ -21,6 +23,49 @@ int main(){
 				return 1;
 			}
 		}
+	}
+
+	/*print what we got*/
+	for( i=0;i<N;i++){
+		for( j=0;j<N;j++){
+			printf("%d ",tree[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n");
+
+	if(scanf("%d %d",&u,&v)!=2){
+		printf("failed reading input\n");
+		return 1;
+	}
+
+	if(u<0 || v<0){
+		printf("first input must be positive\n");
+		return 1;
+	}
+
+	while(1){
+		if(path(tree,u,v)){
+			printf("TRUE\n");
+		}else{
+			printf("FALSE\n");
+		}
+
+		if(feof(stdin)){
+			break;
+		}
+
+		if(scanf("%d %d",&u,&v)!=2){
+			printf("failed reading input\n");
+			return 1;
+		}
+		if(u==-1 && v==-1){
+			break;
+		}
+		if(u<0 || v<0 ){
+			printf("negative indecies dont make sense...\ndid you mean to exit? thats -1 -1\n");
+		}
+
 	}
 
 	printf("done\n");
