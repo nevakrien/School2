@@ -20,7 +20,7 @@ static enum my_bool _path(adjmat tree,int visited[N],size_t u,size_t v){
 this function checks if there is a path from u to v
 */
 enum my_bool path(adjmat tree,size_t u,size_t v){
-	int visited[N];
+	int visited[N] = {0};
 	
 	if(u==v) return TRUE;
 	if(u>=N || v>=N) return FALSE;
