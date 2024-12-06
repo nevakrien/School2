@@ -64,6 +64,7 @@ int main(){
 		}
 		if(u<0 || v<0 ){
 			printf("negative indecies dont make sense...\ndid you mean to exit? thats -1 -1\n");
+			return 1;
 		}
 
 	}
