@@ -3,6 +3,9 @@
 /* helper for handeling recursive part*/
 static enum my_bool _path(adjmat tree,int visited[N],size_t u,size_t v){
 	size_t i;
+	
+	/*mark as visited*/
+	visited[u] = 1;
 
 	/*check for early exit*/
 	if (tree[u][v] == 1) return TRUE;
