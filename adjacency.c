@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 int main(){
+	char c;
 	int u,v;
 
 	size_t i,j;
@@ -45,15 +46,21 @@ int main(){
 	}
 
 	while(1){
+		printf("got u = %d v = %d ",u,v);
 		if(path(tree,u,v)){
 			printf("TRUE\n");
 		}else{
 			printf("FALSE\n");
 		}
 
-		if(feof(stdin)){
+		while((c=getchar())==' ' || c=='\n'){
+
+		}
+		if(c==EOF){
 			break;
 		}
+		ungetc(c,stdin);
+
 
 		if(scanf("%d %d",&u,&v)!=2){
 			printf("failed reading input\n");

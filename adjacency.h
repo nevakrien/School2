@@ -6,7 +6,7 @@ enum my_bool/*dont wana break C99 code if we dont have to*/{
 	FALSE,
 	TRUE
 };
-#define N 3
+#define N 11
 
 typedef int adjmat[N][N];
 
